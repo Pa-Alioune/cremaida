@@ -1,0 +1,44 @@
+<div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden group" [class.lg:col-span-2]="product.isSpecial">
+    <div class="h-64 bg-gradient-to-br flex items-center justify-center relative overflow-hidden" [ngClass]="product.gradient">
+        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity"></div>
+        <i [class]="product.icon" class="text-white text-6xl relative z-10"></i>
+        
+        <!-- Badges -->
+        @if (product.isPopular) {
+        <div class="absolute top-4 right-4 bg-white rounded-full px-3 py-1 text-sm font-semibold text-amber-700">
+            Populaire
+        </div>
+        }
+        @if (product.isSpicy) {
+        <div class="absolute top-4 right-4 bg-red-500 text-white rounded-full px-3 py-1 text-sm font-semibold">
+            Épicé
+        </div>
+        }
+        @if (product.isSpecial) {
+        <div class="absolute top-4 right-4 bg-amber-500 rounded-full px-3 py-1 text-sm font-semibold text-gray-900">
+            Spécialité
+        </div>
+        }
+        
+        <!-- Bottle size badge -->
+        <div class="absolute top-4 left-4 bg-amber-600 text-white rounded-full px-3 py-1 text-sm font-semibold">
+            1L
+        </div>
+    </div>
+    <div class="p-6">
+        <div class="flex items-center justify-between mb-2">
+            <h3 class="text-2xl font-bold text-gray-800">{{ product.name }}</h3>
+            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Disponible</span>
+        </div>
+        <p class="text-gray-600 mb-4">{{ product.description }}</p>
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
+            <span class="text-2xl font-bold text-amber-700">{{ product.price | currency:'FCFA':'symbol':'1.0-0' }}</span>
+            <a href="https://wa.me/221773933644?text=Bonjour%20!%20Je%20souhaite%20commander%20{{product.name}}%20-%20{{product.price}}%20FCFA" 
+               target="_blank"
+               class="inline-flex items-center justify-center px-4 py-2 w-full sm:w-auto bg-green-500 text-white rounded-full hover:bg-green-600 transform hover:scale-105 transition">
+                <i class="fab fa-whatsapp mr-2"></i>
+                Commander
+            </a>
+        </div>
+    </div>
+</div>

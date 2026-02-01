@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Nav } from './features/nav/nav';
+import { LandingPage } from './features/landing-page/landing-page';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [Nav, LandingPage],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

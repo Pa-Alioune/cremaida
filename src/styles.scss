@@ -1,1 +1,98 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+ :root {
+   --brand-gold: #f6c343;
+   --brand-amber: #f59e0b;
+   --brand-cream: #fff4d6;
+   --brand-ink: #0b0f14;
+   --brand-slate: #111827;
+   --text-primary: #111827;
+   --text-secondary: #4b5563;
+   --text-on-dark: rgba(255, 255, 255, 0.92);
+   --ring-gold: rgba(246, 195, 67, 0.35);
+   --shadow-gold: rgba(246, 195, 67, 0.25);
+ }
+
+ .gradient-text {
+   background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-amber) 100%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+   color: var(--brand-amber);
+ }
+
+ .hero-gradient {
+   background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-amber) 100%);
+ }
+
+ .primary-gradient {
+   background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-amber) 100%);
+ }
+
+ .glass-effect {
+   background: rgba(255, 255, 255, 0.18);
+   backdrop-filter: blur(14px);
+   border: 1px solid rgba(17, 24, 39, 0.08);
+ }
+
+ .float-animation {
+   animation: float 7s ease-in-out infinite;
+ }
+
+ @keyframes float {
+   0%, 100% { transform: translateY(0px); }
+   50% { transform: translateY(-18px); }
+ }
+
+ .slide-in {
+   animation: slideIn 0.9s ease-out;
+ }
+
+ @keyframes slideIn {
+   from {
+     opacity: 0;
+     transform: translateY(28px);
+   }
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
+
+ .whatsapp-float {
+   position: fixed;
+   bottom: 30px;
+   right: 30px;
+   z-index: 1000;
+   animation: pulse 2s infinite;
+ }
+
+ @keyframes pulse {
+   0% { transform: scale(1); }
+   50% { transform: scale(1.1); }
+   100% { transform: scale(1); }
+ }
+
+ .product-card {
+   transition: transform 0.28s ease, box-shadow 0.28s ease;
+ }
+
+ .product-card:hover {
+   transform: translateY(-10px);
+   box-shadow: 0 20px 45px rgba(17, 24, 39, 0.12), 0 10px 24px var(--shadow-gold);
+ }
+
+ img {
+   filter: brightness(1.05) contrast(1.08) saturate(1.1);
+   transition: filter 0.25s ease, transform 0.25s ease;
+ }
+
+ img:hover {
+   filter: brightness(1.1) contrast(1.12) saturate(1.15);
+   transform: scale(1.01);
+ }
+
+ body {
+   color: var(--text-primary);
+ }

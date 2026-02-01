@@ -1,0 +1,32 @@
+<nav class="fixed top-0 w-full bg-white shadow-sm z-50">
+    <div class="container mx-auto px-4 sm:px-6 py-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center space-x-2 min-w-0">
+                <div class="w-10 h-10 primary-gradient rounded-full flex items-center justify-center overflow-hidden">
+                    <img src="/logo/logo.png" 
+                         alt="Crem'aida Logo" 
+                         class="w-full h-full object-cover rounded-full">
+                </div>
+                <span class="text-xl sm:text-2xl font-bold gradient-text truncate">Crem'aida</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#accueil" class="text-gray-700 hover:text-amber-600 transition font-medium">Accueil</a>
+                <a href="#produits" class="text-gray-700 hover:text-amber-600 transition font-medium">Nos Produits</a>
+                <a href="#apropos" class="text-gray-700 hover:text-amber-600 transition font-medium">À Propos</a>
+                <a href="#contact" class="text-gray-700 hover:text-amber-600 transition font-medium">Contact</a>
+            </div>
+            <button type="button" class="md:hidden text-gray-700" (click)="toggleMenu()" aria-label="Ouvrir le menu">
+                <i class="fas" [class.fa-bars]="!isMenuOpen()" [class.fa-times]="isMenuOpen()" class="text-2xl"></i>
+            </button>
+        </div>
+
+        <div class="md:hidden" [class.hidden]="!isMenuOpen()">
+            <div class="mt-4 rounded-2xl border border-gray-100 bg-white shadow-sm p-4 space-y-3">
+                <a href="#accueil" (click)="closeMenu()" class="block px-3 py-2 rounded-lg text-gray-800 hover:bg-amber-50 hover:text-amber-700 transition font-medium">Accueil</a>
+                <a href="#produits" (click)="closeMenu()" class="block px-3 py-2 rounded-lg text-gray-800 hover:bg-amber-50 hover:text-amber-700 transition font-medium">Nos Produits</a>
+                <a href="#apropos" (click)="closeMenu()" class="block px-3 py-2 rounded-lg text-gray-800 hover:bg-amber-50 hover:text-amber-700 transition font-medium">À Propos</a>
+                <a href="#contact" (click)="closeMenu()" class="block px-3 py-2 rounded-lg text-gray-800 hover:bg-amber-50 hover:text-amber-700 transition font-medium">Contact</a>
+            </div>
+        </div>
+    </div>
+</nav>
