@@ -22,7 +22,6 @@ export const PRODUCTS: Product[] = [
     flavor: 'lait',
     icon: 'fas fa-glass-water',
     gradient: 'from-yellow-300 to-orange-400',
-    isPopular: true
   },
   {
     id: 'bouye-corossol',
@@ -32,7 +31,9 @@ export const PRODUCTS: Product[] = [
     category: 'bouye',
     flavor: 'corossol',
     icon: 'fas fa-seedling',
-    gradient: 'from-green-400 to-teal-500'
+    gradient: 'from-green-400 to-teal-500',
+    isPopular: true
+
   },
   {
     id: 'bouye-gingembre',
