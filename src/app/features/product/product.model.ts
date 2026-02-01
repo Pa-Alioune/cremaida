@@ -52,7 +52,7 @@ export const PRODUCTS: Product[] = [
     price: 2500,
     category: 'bouye',
     flavor: 'coco',
-    icon: 'fas fa-coconut',
+    icon: 'fas fa-glass-water-droplet',
     gradient: 'from-amber-500 to-yellow-700'
   },
   {
@@ -61,7 +61,7 @@ export const PRODUCTS: Product[] = [
     description: 'La boisson traditionnelle sénégalaise, riche en antioxydants',
     price: 2000,
     category: 'bissap',
-    icon: 'fas fa-heart',
+    icon: 'fas fa-wine-glass',
     gradient: 'from-red-500 to-pink-600',
     isSpecial: true
   }
