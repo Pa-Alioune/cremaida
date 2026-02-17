@@ -1,62 +1,61 @@
-<div class="product-card group relative" [class.lg:col-span-2]="product.isSpecial">
-    <!-- Card Container with Glass Effect -->
-    <div class="relative bg-white/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-lg sm:shadow-xl overflow-hidden border border-white/20 transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]">
+<div class="product-card group relative h-full flex flex-col" [class.lg:col-span-2]="product.isSpecial">
+    <!-- Professional Card Container -->
+    <div class="relative bg-white/95 backdrop-blur-lg rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl overflow-hidden border border-gray-100/50 transition-all duration-400 hover:shadow-2xl hover:scale-[1.02] h-full flex flex-col">
         
-        <!-- Gradient Background with Pattern -->
-        <div class="absolute inset-0 bg-gradient-to-br opacity-5" [ngClass]="product.gradient"></div>
-        <div class="absolute inset-0 opacity-[0.03]">
-            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'0.1\'%3E%3Ccircle cx=\'7\' cy=\'7\' r=\'7\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        <!-- Subtle Background Pattern -->
+        <div class="absolute inset-0 bg-gradient-to-br opacity-3" [ngClass]="product.gradient"></div>
+        <div class="absolute inset-0 opacity-[0.02]">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'0.05\'%3E%3Ccircle cx=\'5\' cy=\'5\' r=\'3\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
         </div>
         
         <!-- Header Section -->
-        <div class="relative p-4 sm:p-6 lg:p-8 pb-0">
-            <div class="flex items-start justify-between mb-4 sm:mb-6">
-                <!-- Product Icon with Animation -->
+        <div class="relative p-4 sm:p-5 lg:p-6 pb-2 flex-shrink-0">
+            <div class="flex items-start justify-between mb-3 sm:mb-4">
+                <!-- Product Icon -->
                 <div class="relative">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl bg-gradient-to-br flex items-center justify-center relative overflow-hidden shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-3" [ngClass]="product.gradient">
-                        <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></div>
-                        <i [class]="product.icon" class="text-white text-2xl sm:text-3xl relative z-10 transform transition-transform duration-500 group-hover:scale-110"></i>
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 lg:w-18 lg:h-18 rounded-xl sm:rounded-2xl bg-gradient-to-br flex items-center justify-center relative overflow-hidden shadow-lg transition-all duration-400 group-hover:scale-105" [ngClass]="product.gradient">
+                        <i [class]="product.icon" class="text-white text-lg sm:text-xl lg:text-2xl relative z-10"></i>
                     </div>
-                    <!-- Floating Ring -->
-                    <div class="absolute -inset-2 rounded-xl sm:rounded-2xl bg-gradient-to-br opacity-0 group-hover:opacity-30 blur-xl transition-all duration-500" [ngClass]="product.gradient"></div>
+                    <!-- Subtle Hover Ring -->
+                    <div class="absolute -inset-2 rounded-xl sm:rounded-2xl bg-gradient-to-br opacity-0 group-hover:opacity-20 blur-lg transition-all duration-400" [ngClass]="product.gradient"></div>
                 </div>
                 
-                <!-- Badges Container -->
+                <!-- Badges -->
                 <div class="flex flex-col gap-1.5 sm:gap-2">
                     @if (product.isPopular) {
-                    <div class="bg-gradient-to-r from-amber-400 to-amber-500 text-white rounded-full px-2 py-1 sm:px-3 sm:py-1 text-xs font-bold shadow-lg transform transition-all duration-300 hover:scale-105">
-                        <i class="fas fa-star mr-1"></i> Populaire
+                    <div class="bg-gradient-to-r from-amber-400 to-amber-500 text-white rounded-full px-2 py-1 sm:px-3 sm:py-1.5 text-xs font-semibold shadow-md transition-all duration-300 hover:scale-105">
+                        <i class="fas fa-star mr-1 text-xs"></i> Populaire
                     </div>
                     }
                     @if (product.isSpicy) {
-                    <div class="bg-gradient-to-r from-red-500 to-red-600 text-white rounded-full px-2 py-1 sm:px-3 sm:py-1 text-xs font-bold shadow-lg transform transition-all duration-300 hover:scale-105">
-                        <i class="fas fa-fire mr-1"></i> Épicé
+                    <div class="bg-gradient-to-r from-red-500 to-red-600 text-white rounded-full px-2 py-1 sm:px-3 sm:py-1.5 text-xs font-semibold shadow-md transition-all duration-300 hover:scale-105">
+                        <i class="fas fa-fire mr-1 text-xs"></i> Épicé
                     </div>
                     }
                     @if (product.isSpecial) {
-                    <div class="bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-full px-2 py-1 sm:px-3 sm:py-1 text-xs font-bold shadow-lg transform transition-all duration-300 hover:scale-105">
-                        <i class="fas fa-crown mr-1"></i> Spécialité
+                    <div class="bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-full px-2 py-1 sm:px-3 sm:py-1.5 text-xs font-semibold shadow-md transition-all duration-300 hover:scale-105">
+                        <i class="fas fa-crown mr-1 text-xs"></i> Spécialité
                     </div>
                     }
                 </div>
             </div>
             
-            <!-- Product Name and Category -->
-            <div class="mb-3 sm:mb-4">
-                <div class="flex items-center gap-2 sm:gap-3 mb-2">
-                    <h3 class="text-xl sm:text-2xl font-bold text-gray-800">{{ product.name }}</h3>
-                    <span class="bg-gradient-to-r from-green-400 to-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+            <!-- Product Info -->
+            <div class="mb-2 sm:mb-3">
+                <div class="flex items-center gap-2 sm:gap-3 mb-1.5">
+                    <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 leading-tight">{{ product.name }}</h3>
+                    <span class="bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-semibold px-2 py-1 rounded-full">
                         {{ product.size || '1L' }}
                     </span>
                 </div>
                 <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap">
-                    <span class="inline-flex items-center px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
-                        <i class="fas fa-tag mr-1"></i>
+                    <span class="inline-flex items-center px-2 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs font-medium bg-gray-100 text-gray-700">
+                        <i class="fas fa-tag mr-1 text-xs"></i>
                         {{ product.category === 'bouye' ? 'Bouye' : 'Bissap' }}
                     </span>
                     @if (product.flavor) {
-                    <span class="inline-flex items-center px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
-                        <i class="fas fa-leaf mr-1"></i>
+                    <span class="inline-flex items-center px-2 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+                        <i class="fas fa-leaf mr-1 text-xs"></i>
                         {{ product.flavor }}
                     </span>
                     }
@@ -65,21 +64,21 @@
         </div>
         
         <!-- Content Section -->
-        <div class="relative px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8">
+        <div class="relative px-4 sm:px-5 lg:px-6 pb-4 sm:pb-5 lg:pb-6 flex-grow flex flex-col">
             <!-- Description -->
-            <p class="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">{{ product.description }}</p>
+            <p class="text-gray-600 mb-4 sm:mb-5 leading-relaxed text-sm sm:text-base flex-grow">{{ product.description }}</p>
             
-            <!-- Size Selector (for products with multiple sizes) -->
+            <!-- Size Selector -->
             @if (product.hasMultipleSizes) {
-            <div class="mb-4 sm:mb-6">
-                <label class="block text-sm font-medium text-gray-700 mb-2">Choisissez la taille :</label>
+            <div class="mb-4 sm:mb-5 flex-shrink-0">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Format :</label>
                 <div class="flex gap-2 sm:gap-3">
                     @for (sizeOption of product.sizes; track sizeOption.size) {
                     <button 
                         type="button"
                         (click)="selectSize(sizeOption.size)"
-                        [class]="selectedSize() === sizeOption.size ? 'ring-2 ring-amber-500 bg-amber-50 text-amber-700 border-amber-500' : 'bg-white text-gray-700 border-gray-300 hover:border-amber-400'"
-                        class="flex-1 px-3 py-2 sm:px-4 sm:py-2.5 border rounded-lg font-medium text-sm sm:text-base transition-all duration-200 flex items-center justify-center gap-2">
+                        [class]="selectedSize() === sizeOption.size ? 'ring-2 ring-amber-500 bg-amber-50 text-amber-700 border-amber-500' : 'bg-white text-gray-700 border-gray-200 hover:border-amber-400'"
+                        class="flex-1 px-3 py-2 sm:px-4 sm:py-2.5 border rounded-lg font-medium text-sm transition-all duration-200 flex items-center justify-center gap-2">
                         <span>{{ sizeOption.size }}</span>
                         <span class="text-xs font-semibold">{{ sizeOption.price | currency:'FCFA':'symbol':'1.0-0' }}</span>
                     </button>
@@ -89,31 +88,31 @@
             }
             
             <!-- Price and Action -->
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 flex-shrink-0 mt-auto">
                 <div class="flex flex-col">
-                    <span class="text-2xl sm:text-3xl font-bold bg-gradient-to-r bg-clip-text text-transparent" [ngClass]="product.gradient.replace('from-', 'from-').replace('to-', 'to-').replace('text-', '')">
+                    <span class="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r bg-clip-text text-transparent" [ngClass]="product.gradient.replace('from-', 'from-').replace('to-', 'to-').replace('text-', '')">
                         {{ currentPrice | currency:'FCFA':'symbol':'1.0-0' }}
                     </span>
                     <span class="text-xs text-gray-500 mt-1">
-                        {{ product.hasMultipleSizes ? 'Prix ' + selectedSize() : 'Prix unitaire' }}
+                        {{ product.hasMultipleSizes ? 'Format ' + selectedSize() : 'Prix unitaire' }}
                     </span>
                 </div>
                 
-                <!-- WhatsApp Button with Enhanced Design -->
+                <!-- WhatsApp Button -->
                 <a href="https://wa.me/221773933644?text={{ whatsappMessage }}" 
                    target="_blank"
-                   class="group/btn relative inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl sm:rounded-2xl font-semibold shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:from-green-600 hover:to-green-700 text-sm sm:text-base">
-                    <div class="absolute inset-0 rounded-xl sm:rounded-2xl bg-white opacity-0 group-hover/btn:opacity-20 transition-opacity"></div>
-                    <i class="fab fa-whatsapp text-base sm:text-lg mr-2 relative z-10 transform transition-transform duration-300 group-hover/btn:scale-110"></i>
+                   class="group/btn relative inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg sm:rounded-xl font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:from-green-600 hover:to-green-700 text-sm sm:text-base">
+                    <div class="absolute inset-0 rounded-lg sm:rounded-xl bg-white opacity-0 group-hover/btn:opacity-15 transition-opacity"></div>
+                    <i class="fab fa-whatsapp text-base sm:text-lg mr-2 relative z-10"></i>
                     <span class="relative z-10">Commander</span>
                 </a>
             </div>
         </div>
         
-        <!-- Decorative Bottom Border -->
-        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r opacity-50" [ngClass]="product.gradient"></div>
+        <!-- Bottom Accent -->
+        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r opacity-60" [ngClass]="product.gradient"></div>
     </div>
     
-    <!-- Hover Glow Effect -->
-    <div class="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500 pointer-events-none" [ngClass]="product.gradient"></div>
+    <!-- Subtle Hover Effect -->
+    <div class="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-br opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-400 pointer-events-none" [ngClass]="product.gradient"></div>
 </div>

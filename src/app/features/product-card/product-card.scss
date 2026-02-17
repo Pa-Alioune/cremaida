@@ -1,6 +1,15 @@
 .product-card {
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   animation: fadeInUp 0.6s ease-out;
+  min-height: 440px; // Hauteur équilibrée
+  
+  @media (min-width: 640px) {
+    min-height: 460px; 
+  }
+  
+  @media (min-width: 1024px) {
+    min-height: 480px; 
+  }
 }
 
 .product-card:hover {
@@ -18,7 +27,7 @@
   }
 }
 
-// Staggered animation for multiple cards
+// Staggered animation
 .product-card:nth-child(1) { animation-delay: 0.1s; }
 .product-card:nth-child(2) { animation-delay: 0.2s; }
 .product-card:nth-child(3) { animation-delay: 0.3s; }
@@ -26,19 +35,20 @@
 .product-card:nth-child(5) { animation-delay: 0.5s; }
 .product-card:nth-child(6) { animation-delay: 0.6s; }
 
-// Glass morphism effect
-.glass-effect {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+// Professional card styles
+.professional-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-// Enhanced button hover effects
-.group:hover .group-hover\:scale-110 {
-  transform: scale(1.1);
+// Hover effects
+.group:hover .group-hover\:scale-105 {
+  transform: scale(1.05);
 }
 
-// Smooth gradient transitions
+// Smooth transitions
 .bg-gradient-to-br {
   transition: all 0.3s ease;
 }
@@ -57,7 +67,7 @@
       width: 100%;
       height: 100%;
       background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.1), transparent);
-      transition: left 0.5s;
+      transition: left 0.4s;
     }
     
     &:hover::before {
@@ -65,20 +75,19 @@
     }
     
     &.selected {
-      transform: scale(1.02);
-      box-shadow: 0 4px 20px rgba(251, 191, 36, 0.2);
+      box-shadow: 0 4px 15px rgba(251, 191, 36, 0.2);
     }
   }
 }
 
-// Enhanced price display
+// Price display
 .price-display {
   position: relative;
   
   &::after {
     content: '';
     position: absolute;
-    bottom: -2px;
+    bottom: -1px;
     left: 0;
     width: 100%;
     height: 2px;
@@ -88,36 +97,115 @@
   }
   
   &:hover::after {
-    opacity: 0.6;
+    opacity: 0.5;
   }
 }
 
-// Custom scrollbar for better UX
-.product-card:hover::-webkit-scrollbar {
-  width: 6px;
-}
-
-.product-card:hover::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
-}
-
-.product-card:hover::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-}
-
-// Special effects for new products
-.bissap-ananas {
-  .product-icon {
-    background: linear-gradient(135deg, #fbbf24, #84cc16);
-    box-shadow: 0 8px 25px rgba(251, 191, 36, 0.3);
+// Grid container
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
   }
 }
 
-.bissap-gingembre {
-  .product-icon {
-    background: linear-gradient(135deg, #ef4444, #f97316);
-    box-shadow: 0 8px 25px rgba(239, 68, 68, 0.3);
+// Grid items
+.products-grid > div {
+  display: flex;
+  align-items: stretch;
+  min-height: 100%;
+}
+
+// Card content layout
+.card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-description {
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.5; // Lisibilité optimale
+  font-size: 0.875rem; // Base responsive
+  
+  @media (min-width: 640px) {
+    font-size: 0.9375rem; // 15px
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 1rem; // 16px
+  }
+}
+
+.card-footer {
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+// Professional typography
+.professional-title {
+  font-weight: 700;
+  line-height: 1.2;
+  
+  @media (min-width: 640px) {
+    font-size: 1.125rem; // 18px
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 1.25rem; // 20px
+  }
+}
+
+.professional-price {
+  font-weight: 800;
+  
+  @media (min-width: 640px) {
+    font-size: 1.25rem; // 20px
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 1.5rem; // 24px
+  }
+}
+
+.professional-button {
+  font-weight: 600;
+  
+  @media (min-width: 640px) {
+    font-size: 0.9375rem; // 15px
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 1rem; // 16px
+  }
+}
+
+// Responsive fixes
+@media (max-width: 639px) {
+  .product-card {
+    min-height: 400px;
+  }
+  
+  .card-description {
+    font-size: 0.8125rem; // 13px
+  }
+  
+  .professional-title {
+    font-size: 1rem; // 16px
+  }
+  
+  .professional-price {
+    font-size: 1.125rem; // 18px
   }
 }
