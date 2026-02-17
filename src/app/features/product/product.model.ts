@@ -5,11 +5,14 @@ export interface Product {
   price: number;
   category: 'bouye' | 'bissap';
   flavor?: string;
+  size?: '250ml' | '1L';
   icon: string;
   gradient: string;
   isSpecial?: boolean;
   isSpicy?: boolean;
   isPopular?: boolean;
+  hasMultipleSizes?: boolean;
+  sizes?: Array<{ size: '250ml' | '1L'; price: number; }>;
 }
 
 export const PRODUCTS: Product[] = [
@@ -20,8 +23,14 @@ export const PRODUCTS: Product[] = [
     price: 2000,
     category: 'bouye',
     flavor: 'lait',
+    size: '1L',
     icon: 'fas fa-glass-water',
     gradient: 'from-yellow-300 to-orange-400',
+    hasMultipleSizes: true,
+    sizes: [
+      { size: '250ml', price: 500 },
+      { size: '1L', price: 2000 }
+    ]
   },
   {
     id: 'bouye-corossol',
@@ -30,10 +39,10 @@ export const PRODUCTS: Product[] = [
     price: 2500,
     category: 'bouye',
     flavor: 'corossol',
+    size: '1L',
     icon: 'fas fa-seedling',
     gradient: 'from-green-400 to-teal-500',
     isPopular: true
-
   },
   {
     id: 'bouye-gingembre',
@@ -42,28 +51,33 @@ export const PRODUCTS: Product[] = [
     price: 2500,
     category: 'bouye',
     flavor: 'gingembre',
+    size: '1L',
     icon: 'fas fa-fire',
     gradient: 'from-orange-400 to-red-500',
     isSpicy: true
   },
   {
-    id: 'bouye-coco',
-    name: 'Bouye Coco',
-    description: 'Bouye tropical au parfum délicat de coco',
-    price: 2500,
-    category: 'bouye',
-    flavor: 'coco',
-    icon: 'fas fa-glass-water-droplet',
-    gradient: 'from-amber-500 to-yellow-700'
-  },
-  {
-    id: 'bissap-rouge',
-    name: 'Bissap Rouge',
-    description: 'La boisson traditionnelle sénégalaise, riche en antioxydants',
+    id: 'bissap-rouge-ananas',
+    name: 'Bissap Rouge Ananas',
+    description: 'Le bissap traditionnel relevé d\'une touche tropicale d\'ananas',
     price: 2000,
     category: 'bissap',
-    icon: 'fas fa-wine-glass',
-    gradient: 'from-red-500 to-pink-600',
+    flavor: 'ananas',
+    size: '1L',
+    icon: 'fas fa-glass-water',
+    gradient: 'from-yellow-400 to-green-500',
     isSpecial: true
+  },
+  {
+    id: 'bissap-rouge-gingembre',
+    name: 'Bissap Rouge Gingembre',
+    description: 'Le bissap rouge avec un piquant subtil de gingembre pour les amateurs de saveurs intenses',
+    price: 2000,
+    category: 'bissap',
+    flavor: 'gingembre',
+    size: '1L',
+    icon: 'fas fa-pepper-hot',
+    gradient: 'from-red-500 to-orange-600',
+    isSpicy: true
   }
 ];
